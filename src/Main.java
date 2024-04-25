@@ -45,7 +45,7 @@ class Item {
     }
 }
 
-// Kelas turunan Weapon mewarisi dari Item
+
 class Weapon extends Item {
     private int damage;
 
@@ -56,12 +56,12 @@ class Weapon extends Item {
 
     @Override
     public void infoItem() {
-        super.infoItem(); // Memanggil metode infoItem() dari superclass
+        super.infoItem(); 
         System.out.println("Damage: " + damage);
     }
 }
 
-// Kelas turunan Potion mewarisi dari Item
+
 class Potion extends Item {
     private String effect;
 
@@ -72,7 +72,7 @@ class Potion extends Item {
 
     @Override
     public void infoItem() {
-        super.infoItem(); // Memanggil metode infoItem() dari superclass
+        super.infoItem(); 
         System.out.println("Effect: " + effect);
     }
 }
@@ -91,29 +91,29 @@ class Potion extends Item {
 //     }
 // }
 
-// Kelas KeranjangBelanja
+
 class Inventory {
     private List<Item> daftarItem;
-    private int totalHarga; // Tambahkan atribut untuk menyimpan total harga pembelian
+    private int totalHarga; 
 
     public Inventory() {
         this.daftarItem = new ArrayList<>();
         this.totalHarga = 0; // Inisialisasi total harga pembelian
     }
 
-    // Metode untuk menambah item ke inventory dan menambahkan total harga pembelian
+ 
     public void tambahItem(Item item) {
         daftarItem.add(item);
-        totalHarga += item.getHarga(); // Menambahkan harga item ke total harga pembelian
+        totalHarga += item.getHarga(); 
     }
 
-    // Metode untuk menghapus item dari inventory dan mengurangi total harga pembelian
+
     public void hapusItem(Item item) {
         daftarItem.remove(item);
-        totalHarga -= item.getHarga(); // Mengurangi harga item dari total harga pembelian
+        totalHarga -= item.getHarga(); 
     }
 
-    // Metode untuk menampilkan daftar item dalam inventory
+ 
     public void tampilkanInventory() {
         for (Item item : daftarItem) {
             item.infoItem();
